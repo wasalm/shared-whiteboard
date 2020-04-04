@@ -20,6 +20,10 @@ In the folder web run
 
 ## Wishlist
 
+short-term-wishlist:
+
+0. bugfix rubber bouncing fullscreen
+
 Long-term wishlist:
 
 1. Show screensizes
