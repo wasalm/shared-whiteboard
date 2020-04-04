@@ -6,8 +6,8 @@ var n = 0;
  * Constants
  */
 
-var ownColor = 'black';
-var collaboratorColor = 'red';
+var ownColor = '#16264c';
+var collaboratorColor = '#5d6200';
 var selectedColor = 'blue';
 
 /*
