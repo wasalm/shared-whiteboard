@@ -1,0 +1,32 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Whiteboard</title>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+</head>
+<body>
+	<div class="nav">
+		<div class="nav-box">
+			<i id="prevBoardBtn" class="fas fa-arrow-circle-left"></i>
+			<i id="nextBoardBtn" class="fas fa-arrow-circle-right"></i>
+			<div class="spacer"></div>
+			<i id="penBtn" class="fas fa-pen-nib"></i>
+			<i id="eraserBtn" class="fas fa-eraser"></i>
+			<div class="spacer"></div>
+			<i id="clearBoardBtn" class="fas fa-trash-alt"></i>
+			<div class="spacer"></div>
+			<i id="fullscreenBtn" class="fas fa-expand-arrows-alt"></i>
+		</div>
+	</div>
+	<div class="bg"></div>
+	<canvas id="canvas" resize></canvas>
+	<script type="text/javascript" src="assets/websockets.js"></script>
+	<script type="text/javascript" src="assets/nav.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.2/paper-full.min.js"></script>
+	<script type="text/paperscript" src="assets/draw.js" canvas="canvas"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+html, body {
+  position: fixed;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+	padding: 0;
+}
+
+.bg {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+
+	background-image: url("./background.jpg");
+	background-repeat: repeat;	
+	z-index: -10;
+}
+
+.nav {
+	position: fixed;
+	left: 0;
+	top: 0;
+	margin: 0;
+	width: 100%;
+	background-color: #363636;
+	z-index: +10;
+}
+.nav-box {
+	margin: 15px 100px 15px 100px;
+	color: white;
+	font-size: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.nav i:hover {
+	opacity: 0.5;
+}
+
+#canvas {
+	position: fixed;
+	left: 0;
+	top: 45px;
+	width: 100vw;
+	height: 100vh;
+	background-color: #0a0a0a55;
+	z-index: 0;
+}
