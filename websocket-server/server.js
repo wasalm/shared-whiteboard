@@ -32,6 +32,11 @@ wss.on('connection', function(ws) {
         userId: userId
     }));
 
+    ws.send(JSON.stringify({
+        action: "clearBoard",
+        currentLayer: currentLayer
+    }));
+
     for (var uId in layers[currentLayer]) {
         if (layers[currentLayer].hasOwnProperty(uId)) {
             for (var pId in layers[currentLayer][uId]) {
@@ -55,7 +60,8 @@ wss.on('connection', function(ws) {
                 if (currentLayer != 0) { // ignore if zero
                     //Request clients to clean boards
                     broadcast(wss, null, JSON.stringify({
-                        action: "clearBoard"
+                        action: "clearBoard",
+                        currentLayer: currentLayer - 1
                     }));
 
                     if (currentLayer + 1 == layers.length) {
@@ -90,7 +96,8 @@ wss.on('connection', function(ws) {
                 //Request clients to clean boards
                 if (Object.keys(layers[currentLayer]).length != 0 || currentLayer + 1 < layers.length) {
                     broadcast(wss, null, JSON.stringify({
-                        action: "clearBoard"
+                        action: "clearBoard",
+                        currentLayer: currentLayer + 1
                     }));
 
                     //create layer if nessesary
@@ -154,7 +161,8 @@ wss.on('connection', function(ws) {
                 layers[currentLayer] = {};
 
                 broadcast(wss, ws, JSON.stringify({
-                    action: "clearBoard"
+                    action: "clearBoard",
+                    currentLayer: currentLayer
                 }));
                 break;
             default:

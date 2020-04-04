@@ -41,6 +41,15 @@ html, body {
 	opacity: 0.5;
 }
 
+#pageNr {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	cursor: default;
+	z-index: +10;
+	font-family: 'Lato';
+}
+
 #canvas {
 	position: fixed;
 	left: 0;

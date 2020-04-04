@@ -2,8 +2,7 @@ globals = {
     userId: "",
     socket: {
         init: () => {
-            // let url = "ws://localhost:8081/api";
-            let url = "ws://192.168.2.89:8081/api";
+            let url = "wss://thuis.andries-salm.com/shared-whiteboard/ws";
             let socket = new WebSocket(url);
 
             socket.onopen = function(e) {
@@ -60,6 +59,7 @@ globals = {
                         break;
                     case "clearBoard":
                         globals.clearBoard();
+                        document.getElementById("pageNr").innerHTML = data.currentLayer + 1;
                         break;
                     default:
                         console.log("[Unknown message] " + event.data);
