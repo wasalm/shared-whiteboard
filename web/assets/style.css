@@ -7,6 +7,19 @@ html, body {
 	padding: 0;
 }
 
+@media screen and (orientation: portrait) {
+  /*html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    height: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }*/
+}
+
 /* Background pattern from Toptal Subtle Patterns */
 .bg {
 	position: fixed;
@@ -29,6 +42,7 @@ html, body {
 	background-color: #363636;
 	z-index: +10;
 }
+
 .nav-box {
 	margin: 15px 100px 15px 100px;
 	color: white;
@@ -55,7 +69,21 @@ html, body {
 	position: fixed;
 	left: 0;
 	top: 45px;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	z-index: 0;
+}
+
+@media screen and (orientation: portrait) {
+	.nav {
+	  	transform: rotate(-90deg);
+	    transform-origin: left top;
+		top: 100vh;
+		width: 100vh;
+	}
+
+	#canvas {
+	  	top: 0;
+	  	left: 45px;
+	}
 }

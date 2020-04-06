@@ -22,13 +22,17 @@ In the folder web run
 
 short-term-wishlist:
 
-0. bugfix rubber bouncing fullscreen
+2. webapp
+3. multi screensize
+4. show selected button
+5. page number to top
+6. websockets reload
+
 
 Long-term wishlist:
 
-1. Show screensizes
+1. Use protobufs
 2. Authentication
-3. Using Socket.js
 4. Using multiple colors
 5. Using multiple rooms
 5. Save data
