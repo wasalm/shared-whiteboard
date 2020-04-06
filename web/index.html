@@ -1,21 +1,29 @@
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title>Shared Whiteboard</title>
     <link rel="stylesheet" type="text/css" href="assets/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@600&display=swap" rel="stylesheet">
+
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Whiteboard">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="assets/icon.png">
 </head>
 <body>
 	<div class="nav">
 		<div class="nav-box">
+			<div class="title">Shared Whiteboard</div>
 			<i id="prevBoardBtn" class="fas fa-arrow-circle-left"></i>
+			<div id="pageNr">1</div>
 			<i id="nextBoardBtn" class="fas fa-arrow-circle-right"></i>
 			<div class="spacer"></div>
-			<i id="penBtn" class="fas fa-pen-nib"></i>
+			<i id="penBtn" class="fas fa-pen-nib active"></i>
 			<i id="eraserBtn" class="fas fa-eraser"></i>
 			<div class="spacer"></div>
 			<i id="clearBoardBtn" class="fas fa-trash-alt"></i>
@@ -23,7 +31,6 @@
 	</div>
 	<div class="bg"></div>
 	<canvas id="canvas" resize></canvas>
-	<div id="pageNr">1</div>
 	<script type="text/javascript" src="assets/websockets.js"></script>
 	<script type="text/javascript" src="assets/nav.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.2/paper-full.min.js"></script>

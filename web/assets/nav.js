@@ -13,8 +13,12 @@ document.getElementById("clearBoardBtn").addEventListener("click", (ev) => {
 
 document.getElementById("penBtn").addEventListener("click", (ev) => {
 	globals.enablePen();
+	document.getElementById("penBtn").classList.add("active");
+	document.getElementById("eraserBtn").classList.remove("active");
 });
 
 document.getElementById("eraserBtn").addEventListener("click", (ev) => {
 	globals.enableEraser();
+	document.getElementById("penBtn").classList.remove("active");
+	document.getElementById("eraserBtn").classList.add("active");
 });

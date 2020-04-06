@@ -22,21 +22,16 @@ In the folder web run
 
 short-term-wishlist:
 
-2. webapp
-3. multi screensize
-4. show selected button
-5. page number to top
-6. websockets reload
-
+- multi screensize/autorotate
+- Use protobufs
 
 Long-term wishlist:
 
-1. Use protobufs
-2. Authentication
-4. Using multiple colors
-5. Using multiple rooms
-5. Save data
-
+- Use protobufs
+- Authentication
+- Using multiple colors
+- Using multiple rooms
+- c++ backend
 
 
 

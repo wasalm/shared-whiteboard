@@ -52,17 +52,38 @@ html, body {
 	justify-content: space-around;
 }
 
-.nav i:hover {
+.nav i {
 	opacity: 0.5;
 }
 
+.nav i.active {
+	opacity: 1;
+}
+
+.nav i:hover {
+	opacity: 1;
+}
+
+.title {
+	font-family: 'Baloo Thambi 2', cursive;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 15px;
+	/*opacity: 0.5;*/
+}
+
 #pageNr {
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	cursor: default;
-	z-index: +10;
-	font-family: 'Lato';
+	font-family: 'Baloo Thambi 2', cursive;
+	font-weight: 600;
+	border-radius: 50%;
+    width: 15px;
+    height: 15px; 
+    background-color: white;
+    color: #363636;
+    font-size: 13px;
+    text-align: center;;
+    line-height: 15px;
+    /*opacity: 0.5;*/
 }
 
 #canvas {
