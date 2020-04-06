@@ -22,7 +22,6 @@ In the folder web run
 
 short-term-wishlist:
 
-- multi screensize/autorotate
 - Use protobufs
 
 Long-term wishlist:
