@@ -1,40 +1,23 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 html, body {
   position: fixed;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
   margin: 0;
-	padding: 0;
+  padding: 0;
 }
 
-@media screen and (orientation: portrait) {
-  /*html {
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
-    height: 100vw;
-    overflow-x: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
-  }*/
-}
-
-/* Background pattern from Toptal Subtle Patterns */
-.bg {
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
-
-	background-image: url("background.png");
-	background-repeat: repeat;
-	z-index: -10;
+body {
+	background-color: black;
 }
 
 .nav {
-	position: fixed;
+	position: absolute;
 	left: 0;
 	top: 0;
 	margin: 0;
@@ -86,25 +69,37 @@ html, body {
     /*opacity: 0.5;*/
 }
 
-#canvas {
-	position: fixed;
+/*https://stackoverflow.com/questions/20590239/maintain-aspect-ratio-of-div-but-fill-screen-width-and-height-in-css/36295495#20593342*/
+.container {
+	width: 100vw; 
+    height: 56.25vw; 
+    max-height: 100vh;
+    max-width: 177.78vh; 
+    margin: auto;
+    position: fixed;
+    top:0;bottom:0;
+    left:0;right:0;
+}
+
+/* Background pattern from Toptal Subtle Patterns */
+.inner-container {
+	position: absolute;
 	left: 0;
-	top: 45px;
+	top: 0;
 	width: 100%;
 	height: 100%;
+
+	background-image: url("background.png");
+	background-repeat: repeat;
+}
+
+#canvas {
+	left: 0;
+	top: 45px;
+
+	width: 100%;
+	height: calc(100% - 45px);
+    position: absolute;
 	z-index: 0;
 }
 
-@media screen and (orientation: portrait) {
-	.nav {
-	  	transform: rotate(-90deg);
-	    transform-origin: left top;
-		top: 100vh;
-		width: 100vh;
-	}
-
-	#canvas {
-	  	top: 0;
-	  	left: 45px;
-	}
-}

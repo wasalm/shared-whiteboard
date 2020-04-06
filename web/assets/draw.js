@@ -10,6 +10,9 @@ var ownColor = '#16264c';
 var collaboratorColor = '#5d6200';
 var selectedColor = 'blue';
 
+var oldWidth = -1;
+var oldHeight = -1;
+
 /*
  *	Socket functions
  */
@@ -24,6 +27,9 @@ globals.addPath = function(pId, uId, payload) {
     });
 
     path.importJSON(payload);
+
+    path.scale(project.view.bounds.width,project.view.bounds.height, new Point(0,0));
+
     if(uId == userId) {
     	path.strokeColor =  ownColor;
     } else {
@@ -158,12 +164,34 @@ function onMouseUp(event) {
         currentPath.simplify(10);
         var copy = currentPath.clone({insert: false});
         copy.data = {};
-        globals.socket.addPath(currentPath.data.pathId, copy.exportJSON());
+
+        copy.scale(1/project.view.bounds.width,1/project.view.bounds.height, new Point(0,0));
+
+        console.log(copy.exportJSON());
+        globals.socket.addPath(currentPath.data.pathId, copy.exportJSON({precision: 10}));
     } else {
         selectPaths(event.point);
         deleteSelectedPaths();
         mouseCircle.visible = false;
     }
+}
+
+view.onResize = function(event) {
+    // Whenever the view is resized, move the path to its center:
+    if(oldWidth != -1 && oldHeight != -1) {
+        var newWidth = project.view.bounds.width;
+        var newHeight = project.view.bounds.height;
+
+        for(var i=0; i < project.layers.length; i++) {
+            for(var j = project.layers[i].children.length-1; j >= 0; j-- ) {
+                var child = project.layers[i].children[j];
+                child.scale(newWidth/oldWidth, newHeight/oldHeight, new Point(0,0));
+            }
+        }
+    }
+
+    oldWidth = project.view.bounds.width;
+    oldHeight = project.view.bounds.height;
 }
 
 function makeid() {
