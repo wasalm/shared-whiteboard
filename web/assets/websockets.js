@@ -2,7 +2,7 @@ globals = {
     userId: "",
     socket: {
         init: () => {
-            let url = "wss://thuis.andries-salm.com/shared-whiteboard/ws";
+            let url = "/shared-whiteboard-ws";
             let socket = new WebSocket(url);
 
             socket.onopen = function(e) {
